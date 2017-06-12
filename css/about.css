@@ -1,0 +1,44 @@
+
+.about_center_up div ul li div{
+	padding: 2px 0 0 0;
+	line-height: 1.5em;
+}
+.about_center_up div ul li a{
+	font-size: 0.89em;
+	color: #555;
+	line-height: 1.5em;
+	text-transform: uppercase;
+}
+
+.about_bottom_left p{
+	font-size: 1em;
+	color: #777;
+	line-height: 1.6em;
+	margin-bottom: 3%;
+}
+.about_bottom_center_history ul li span{
+	font-size: 1em;
+	color: #555;
+	line-height: 1.6em;
+	float: left;
+	width: 15%;
+}
+.about_bottom_center_history{
+	margin-bottom:6%;
+}
+.about_bottom_center_history ul li p{
+	font-size: 1em;
+	color: #777;
+	line-height: 1.6em;
+	float: right;
+	width: 83%;
+}
+.about_bottom_right_questions {
+	margin: 10px 0 3px 0;
+}
+.about_bottom_right_questions p{
+	font-size: 1em;
+	color: #777;
+	line-height: 1.6em;
+	margin-bottom: 6%;
+}

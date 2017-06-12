@@ -1,0 +1,99 @@
+.services-left div p{
+    background:#C0392B;
+    padding:10px;
+    color:#fff;
+    font-size: 1.3em;
+    text-transform:uppercase;
+    font-weight: bold;
+}
+h3{
+    color: #000;
+    margin-bottom:3%;
+    text-transform: uppercase;
+    font-size: 1.4em;
+}
+.services_up{
+    margin-bottom:10%;
+}
+.services_up li{
+    background: url(../imgs/list.png)no-repeat 0 11px;
+    border-bottom: 1px dotted #BDBABA;
+    padding: 4px 0 10px 10px;
+    margin: 10px 0px 0px;
+}
+.services_up li.last{
+    border-bottom:none;
+}
+.services_up li a{
+    font-size:1em;
+    color: #777;
+    vertical-align: top;
+}
+.services_center {
+    margin-bottom:17%;
+}
+.services_center .poll{
+    margin-bottom:8%;
+}
+.services-text{
+    float:left;
+    color:#777;
+    font-size:1em;
+}
+.services-percent{
+    float:right;
+    color:#777;
+    font-size:1em;
+}
+.services-skills {
+    width: 100%;
+    margin: 10px 0;
+    background-color: #D7DEE0;
+    height: 10px;
+}
+.services-skills > div {
+    height: 100%;
+    display: block;
+    background-color:#C0392B;
+}
+.services-skills p {
+    position: absolute;
+    margin-left: 15px;
+    color: #FFF;
+}
+.services_bottom{
+    width:69%;
+}
+.services_bottom h4 {
+    font-size: 0.89em;
+}
+.services_bottom div {
+    font-size: 12px;
+}
+.services_bottom div a {
+    font-size: 0.89em;
+    color: #555;
+    line-height: 1.5em;
+    text-transform: uppercase;
+
+
+
+
+
+
+
+}
+.services-time{
+    margin:0;
+    padding:0;
+    border:0;
+    font-size:100%;
+    font:inherit;
+    vertical-align:baseline;
+}
+.services_main{
+    text-align: center;
+}
+.services_main p{
+    max-width: 447px;
+}

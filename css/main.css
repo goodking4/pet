@@ -1,0 +1,79 @@
+.clear{clear:both;}
+/*****************************全局样式*****************************************/
+.a_style, .a_style:hover{
+    color: #fff;
+    cursor:pointer;
+}
+li{
+    list-style-type: none;
+}
+h3{
+    color: #000;
+    font-size: 1.6em;
+    margin-bottom:5%;
+    text-transform: uppercase;
+}
+h4{
+    font-size: 1em;
+    color: #555;
+    line-height: 1.5em;
+    text-transform: uppercase;
+}
+h5{
+    font-size: 1em;
+    color: #555;
+    line-height: 1.6em;
+    margin-bottom: 5%;
+}
+/********************************END*******************************************/
+.main-btn {
+    padding: 12px 30px;
+    font-size:1em;
+    background:#C0392B;
+    color:#fff;
+    transition:background .2s linear;
+}
+.main-btn:hover{
+    background:#333333;
+    color:#fff;
+}
+.listimg {
+    position: relative;
+    padding:0;
+}
+.listimg img{
+    position: absolute;
+    background: #FFF;
+    box-shadow: 0 0 8px #AAA;
+    -webkit-box-shadow: 0 0 8px #AAA;
+    -moz-box-shadow: 0 0 8px #AAA;
+    -o-box-shadow: 0 0 8px #AAA;
+    border: 5px solid #FFF;
+}
+@media screen and (max-width: 767px){
+    .listimg{  top: 25px;}
+}
+@media screen and (min-width: 768px)and (max-width: 991px){
+    .listimg{top:20px;}
+}
+@media screen and (min-width: 992px){
+    .listimg{  top: 10px;  }
+}
+.main-text {
+    display: block;
+    float: left;
+}
+.main-text h3 {
+    text-transform: none;
+    font-size: 1.3em;
+    text-transform: uppercase;
+}
+.main-text h3 span {
+    color:#C0392B;
+}
+
+p {
+    line-height: 1.5em;
+    font-size: 1em;
+    color: #989A96;
+}

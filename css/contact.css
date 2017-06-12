@@ -1,0 +1,60 @@
+.map{
+    margin-bottom:20px;
+}
+.company_address p{
+    line-height: 1.8em;
+    font-size: 1em;
+    color: #777;
+}
+.company_address p span{
+    text-decoration:underline;
+    color:#333;
+    cursor:pointer;
+}
+.contact_form{
+    position:relative;
+}
+.contact_form div{
+    padding:15px 0 20px;
+}
+.contact_form span{
+    display:block;
+    font-size: 1em;
+    color: #777;
+    line-height: 1.6em;
+}
+.contact_bottom{
+    padding-top:2%;
+}
+.contact_form input[type="text"],.contact-form,textarea{
+    padding:15px;
+    display:block;
+    width:98%;
+    background:none;
+    border: none;
+    outline:none;
+    color:#989A96;
+    font-size:0.8125em;
+    font-family:Arial, Helvetica, sans-serif;
+    box-shadow: inset 0px 0px 3px #999;
+    -webkit-box-shadow: inset 0px 0px 3px #999;
+    -moz-box-shadow: inset 0px 0px 3px #999;
+    -o-box-shadow: inset 0px 0px 3px #999;
+    -webkit-appearance:none;
+}
+.contact_form textarea{
+    resize:none;
+    height:150px;
+}
+.contact-btn{
+    background:#C0392B;
+    color:#fff;
+    font-size: 0.8125em;
+    padding: 10px 30px 10px 30px;
+    border-radius:3px;
+}
+.contact-btn:hover{
+    background:#2C2D2B;
+    color:#fff;
+    transition:background .2s linear;
+}

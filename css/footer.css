@@ -1,0 +1,51 @@
+.footer-main{
+    background-image: url("../imgs/footer/pattern.gif") ;
+}
+.footer-first li{
+    background: url(../imgs/footer/marker.png) no-repeat 0 0;
+    line-height: 0.8em;
+    padding: 0 0 15px 18px;
+    list-style-type: none;
+}
+.footer-first li a{
+    font-size: 1.3em;
+}
+.footer-main h3{
+    color: #fff;
+}
+
+.footer-main a{
+    color: #A0A0A0;
+}
+.footer-main a:hover{
+    color: #fff;
+    text-decoration: none;
+}
+.footer-icon li{
+    float: left;
+    margin-left:10px ;
+    list-style-type: none;
+}
+.footer-copy {
+    color: #A0A0A0;
+    text-align: center;
+    font-size: 1em;
+    text-transform: uppercase;
+    padding:4% 0;
+}
+.footer-authentication a{
+    display: inline-block;
+    margin: 20px 10px;
+    overflow: hidden;
+}
+.footer-links a{
+    margin: 0px 10px;
+}
+@media screen and (max-width: 767px){
+    .footer-copy {
+        padding-top:18% ;
+    }
+    .footer-authentication{
+        display: none;
+    }
+}
