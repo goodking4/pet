@@ -1,0 +1,112 @@
+<div ng-include="'tpl/include/header.html'"></div>
+    <div class="banner">
+        <ul>
+                <li style="z-index:20; display:block;background:#b5bdca url(imgs/shop/banner_01.jpg) no-repeat center 0;"><a href=""></a></li>
+                <li style="background:#141414 url(imgs/shop/banner_02.jpg) no-repeat center 0;"><a href=""></a></li>
+                <li style="background:#ffffff url(imgs/shop/banner_03.jpg) no-repeat center 0;"><a href=""></a></li>
+                <li style="background:#ffffff url(imgs/shop/banner_04.jpg) no-repeat center 0;"><a href=""></a></li>
+        </ul>
+        <span class="bnr_cut bnr_prev"></span>
+        <span class="bnr_cut bnr_next"></span>
+        <div class="bnr_indicator">
+            <a href="" class="bnr_active"></a><a href=""></a><a href=""></a><a href=""></a>
+        </div>
+    </div>
+<div style="" class="container ">
+    <h2>Selector</h2>
+
+    <div class="row shop-nav">
+        <div class="col-md-2 col-sm-4 col-xs-6" ng-repeat="list in shop_nav_list">
+            <a href="#/msg">
+                <img src="imgs/shop/{{list.spic}}"/>
+
+                <p style="text-align: center">{{list.sname}}</p>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="container" style="margin-bottom: 30px">
+    <div class="heading4">
+        <h2>Our Gallery</h2>
+    </div>
+    <div class="row" >
+        <div class="shop-block col-md-3 col-sm-6 col-xs-12" ng-repeat="data in list">
+            <a href="imgs/{{data.lpic}}" class="swipebox" title="Image Title" ng-click="swipebox($event)"> <img src="imgs/{{data.mpic}}" alt=""><span class="zoom-icon"></span> </a>
+            <h4>{{data.sbtitle}}</h4>
+            <p>{{data.sbtext}}</p>
+            <a href="#/{{data.sbid}}" class="btn btn-default">查看更多</a>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="">
+        <button class="btn btn-success" ng-click="loadMore()" style="float: right" ng-show="hasMore">加载更多</button>
+        <div class="well text-center" ng-hide="hasMore">没有更多内容了</div>
+    </div>
+</div>
+<div ng-include="'tpl/include/footer.html'"></div>
+<script>
+    $(function(){
+
+        //图片轮播开始
+        var number=$(".banner ul li").size()-1;//最大下标
+        var cur=0;//当前显示的图片
+        var timer;//定时器
+        //下一个
+        function slideNext(){
+            if(cur<number){
+                $('.banner ul li').eq(cur).css({'z-index':10}).stop().fadeOut();
+                $('.banner ul li').eq(cur+1).css({'z-index':20}).stop().fadeIn();
+                $('.bnr_indicator a').removeClass().eq(cur+1).addClass('bnr_active');
+                cur++;
+            }else{
+                $('.banner ul li').eq(cur).css({'z-index':10}).stop().fadeOut();
+                $('.banner ul li').eq(0).css({'z-index':20}).stop().fadeIn();
+                $('.bnr_indicator a').removeClass().eq(0).addClass('bnr_active');
+                cur=0;
+            }
+        }
+        //上一个
+        function slidePrev(){
+            if(cur>0){
+                $('.banner ul li').eq(cur).css({'z-index':10}).stop().fadeOut();
+                $('.banner ul li').eq(cur-1).css({'z-index':20}).stop().fadeIn();
+                $('.bnr_indicator a').removeClass().eq(cur-1).addClass('bnr_active');
+                cur--;
+            }else{
+                $('.banner ul li').eq(cur).css({'z-index':10}).stop().fadeOut();
+                $('.banner ul li').eq(number).css({'z-index':20}).stop().fadeIn();
+                $('.bnr_indicator a').removeClass().eq(number).addClass('bnr_active');
+                cur=number;
+            }
+        }
+
+        timer=setInterval(slideNext,3000);
+        //当鼠标移入banner区域的时候，停止自动播放
+        $(".banner").mouseover(function(){
+            clearInterval(timer);
+        });
+        $(".banner").mouseout(function(){
+            timer=setInterval(slideNext,3000);
+        });
+        //左右箭头
+        $(".bnr_next").click(function(){
+            slideNext();
+        });
+        $(".bnr_prev").click(function(){
+            slidePrev();
+        });
+
+        //小圆点指示器
+        $('.bnr_indicator a').mouseover(function(){
+            var now=$(this).index();//获取触发事件的a的下标
+            $('.banner ul li').eq(cur).css({'z-index':10}).stop().fadeOut();
+            $('.banner ul li').eq(now).css({'z-index':20}).stop().fadeIn();
+            cur=now;//为变量cur重新赋值，以便于鼠标移出banner区域的时候，定时器从当前图片往后播放
+            $(".bnr_indicator a").removeClass();
+            $(this).addClass('bnr_active');
+        });
+
+        //图片轮播结束
+    });
+</script>

@@ -1,0 +1,190 @@
+<div class="login-bg">
+    <div class="login">
+        <button class="btn btn-danger btn-xs" style="float: right" ng-click="closeLogin()">
+            <span class="glyphicon glyphicon-remove"></span>
+        </button>
+        <div style="position: relative" class="login-form">
+            <form class="" action="" id="login-form">
+                <h2>用户登录</h2>
+
+                <div class="form-group">
+                    <label for="login_uname">用户名:</label>
+                    <input type="text" class="form-control" id="login_uname" name="login-uname" placeholder="请输入您的用户名" required/>
+                    <span class="help-block"></span>
+                </div>
+                <div class="form-group">
+                    <label for="login_upwd">密码:</label>
+                    <input type="password" class="form-control" id="login_upwd" name="login-upwd" placeholder="请输入您的密码" required/>
+                    <span class="help-block"></span>
+                </div>
+                <br/>
+
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"/>记住密码
+                    </label>
+                </div>
+                <br/>
+
+                <div class="login-btn-group">
+                    <button class="btn btn-success" id="login">登录</button> | <a href="#/register">注册</a>
+                    <br/>
+                </div>
+                <div style="text-align: right">
+                    <a href="#">忘记密码?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<nav>
+    <div class="nav-box"></div>
+    <div class="container">
+        <div class="nav navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="#" class="navbar-brand logo"></a>
+                    <a ng-click="headeradd()" class="navbar-toggle">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                </div>
+                <div id="top_menu" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav ">
+                        <li>
+                            <a data-toggle="dropdown">菜单
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" >
+                                <li><a href="#/main">首页</a></li>
+                                <li><a href="#/shop">商城</a></li>
+                                <li><a href="#/BBS">论坛</a></li>
+                                <li><a href="#/services">服务</a></li>
+                                <li><a href="#/contact">联系我们</a></li>
+                                <li><a href="#/about">关于我们</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="qr-code navbar-right">
+                        <a><img src="imgs/nav/qr-code-1.jpg"/>扫一扫</a>
+
+                        <div class="qr-code-2"><img src="imgs/nav/qr-code-2.jpg"/></div>
+                    </div>
+                    <form class="navbar-form navbar-right " role="search">
+                        <div class="form-group" style="position: relative">
+                            <input type="text" class="form-control" placeholder="Search..."><span
+                                class="glyphicon glyphicon-search"
+                                style="color:#000;position: absolute;top:10px;right: 15px"></span>
+                        </div>
+                        <button type="submit" class="btn btn-default">搜索</button>
+                    </form>
+
+                    <div class="navbar-right login-div" style="margin-right: 20px ">
+                        <a href="#/register" class="navbar-text navbar-right">注册</a>
+                        <span class="navbar-text navbar-right">|</span>
+                        <a id="login-btn" ng-click="showLogin()" class="btn btn-success navbar-btn navbar-right">登录</a>
+                    </div>
+                    <div class="navbar-right navbar-text welcome">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="nav-main">
+    <div class="header-top">
+        <div class="nav-cssmenu">
+            <ul class="row">
+                <li class="col-xs-4 col-md-2" id="mainB"><a href="#/main"><span>首页</span></a></li>
+                <li class="col-xs-4 col-md-2" id="shopB"><a href="#/shop"><span>萌宠商城</span></a></li>
+                <li class=" has-sub col-xs-4 col-md-2" id="mainB"><a href="#/services"><span>各类服务</span></a></li>
+                <li class="col-xs-4 col-md-2" id="BBSB"><a href="#/BBS"><span>爱宠论坛</span></a></li>
+                <li class="col-xs-4 col-md-2"  id="contactB"><a href="#/contact"><span>联系我们</span></a></li>
+                <li class="last col-xs-4 col-md-2" id="aboutB"><a href="#/about"><span>关于我们</span></a></li>
+                <div class="clear"></div>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="nav-logo col-xs-12">
+                <h1><a href="#/main">Smarty</a></h1>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<script>
+    $(function(){
+        var uname = sessionStorage['LoginName'];
+        if(uname){
+            $('.welcome ').html('欢迎回来：<a class="a_style">'+uname+'</a> <a  class="a_style remove-login">[退出登录]</a>');
+            $('.login-div').html("");
+        }
+    });
+    login_uname.onblur = function(){
+        if(this.validity.valueMissing){
+            var msg = '请输入用户名！';
+            this.nextElementSibling.innerHTML = msg;
+            this.nextElementSibling.className = 'help-block err-msg';
+            this.setCustomValidity(msg);
+        }else{
+            this.nextElementSibling.innerHTML ="";
+            this.nextElementSibling.className = 'help-block';
+        }
+    };
+    login_upwd.onblur = function(){
+        if(this.validity.valueMissing){
+            var msg = '请输入密码！';
+            this.nextElementSibling.innerHTML = msg;
+            this.nextElementSibling.className = 'help-block err-msg';
+            this.setCustomValidity(msg);
+        }else{
+            this.nextElementSibling.innerHTML ="";
+            this.nextElementSibling.className = 'help-block';
+        }
+    };
+    $("#login").on("click",function(){
+        var uname=$('[name="login-uname"]').val()
+        $.ajax({
+            url: 'data/pet_login.php',
+            type: 'POST',//提交的方式
+            dataType:'json',
+            data: $("#login-form").serializeArray(),
+            success: function(msg) {
+                if(msg.code===2){
+                    alert("用户名或密码错误请重新输入!!!");
+                }else if(msg.code===1){
+                    var html="";
+                    html=`
+                <div class='well' style="margin-bottom: 200px">
+                    <h3 style="color:#5CB85C ;font-weight: bold">
+                    登录成功!欢迎回来 ${uname},3秒后自动返回页面。
+                <br>
+                    <a href="" class="btn btn-success" style="float:right" >立即跳转<a>
+                    </h3>
+                    </div>`
+                    $('.login-form').html(html);
+                    $('.welcome ').html('欢迎回来：<a class="a_style">'+uname+'</a> <a class="remove-login a_style" >[退出登录]</a>');
+                    //loginName = uname; //把登录用户名保存到全局
+                    sessionStorage.setItem('LoginName', uname);
+                    $('.login-div').html("");
+                    setTimeout(function(){
+                        window.location.reload();
+                    },3000)
+
+                }
+
+
+            }
+        });
+        return false;
+    });
+    $('.remove-login').on("click",function(){
+        sessionStorage.removeItem('LoginName');
+        alert("成功退出登录!");
+        window.location.reload();
+    });
+
+</script>
